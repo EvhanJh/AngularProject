@@ -1,13 +1,13 @@
 # TP Gestion de notes de Documents ✔
-***
+
 ## Conditions Obligatoires ✔
-***
+
 - Utiliser Bootstrap pour la structure de votre application
 - Travailler en groupe (5 max)
 - Utiliser la librairie shodownJs pour la gestion du markdown
 
 ## Description du projet ✔
-***
+
 Vous devez créér une application de création de carnets de documents. Chaque carnet est défini par :
 - un id
 - un nom
@@ -32,7 +32,7 @@ Que ce soit pour les carnets et les documents on pourra :
   Les carnets et les documents devront être sauvegardés dans le localStorage.
 
 ## Objectifs pédagogiques ✔
-***
+
 - Création d'application Angular
 - Manipulation de Angular CLI
 - Creation de SPA avec routes dynamiques
@@ -42,24 +42,30 @@ Que ce soit pour les carnets et les documents on pourra :
 - Importations de librairies
 
 ## Rendu ✔
-***
+
 - Vous devrez rendre les projets pour le 7 Fevrier 2022 (environ 3 semaines)
 - Vous devrez **obligatoirement** fournir votre code via un repository Github
 - Envoyer par mail a votre reposable pédagogique le lien vers repository Github
 
 
 ## Comment installer le projet ?
-***
-> git clone git@github.com:EvhanJh/AngularProject.git
 
+```
+git clone git@github.com:EvhanJh/AngularProject.git
+```
 Une fois récupéré se positionner dans le répertoire de l'application
 
-> cd app-spa-doc
-
+```
+cd app-spa-doc
+```
 Installer les dépendances
 
-> npm install
+```
+npm install
+```
 
 Lancer l'application
 
-> ng serve
+```
+ng serve
+```
