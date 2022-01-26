@@ -1,0 +1,66 @@
+<h1>
+  Gestion du carnet : {{ notebook.nom }}
+  <small class="fs-3 float-end">
+    <span class="badge bg-primary">Carnet</span>
+  </small>
+</h1>
+<p>Description : {{notebook.description}}</p>
+<hr />
+<div class="row">
+  <div class="col">
+    <a class="btn btn-outline-secondary" [routerLink]="['/notebook/']">
+      Retour à la gestion des carnets
+    </a>&nbsp;
+    <a class="btn btn-primary" [routerLink]="['/notebook/'+ notebook.id +'/add']">
+      Créer un document
+    </a>
+  </div>
+  <div class="col-4">
+    <input
+      class="form-control me-2"
+      type="text"
+      placeholder="Ex : Nom du document ou de la catégorie"
+      [(ngModel)]="search" (ngModelChange)="search"
+    />
+  </div>
+</div>
+
+<table class="table-striped table table-hover">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Nom</th>
+    <th>Catégorie</th>
+    <th>Modifier</th>
+    <th>Supprimer</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let doc of documents | searchFilter: search; let i = index">
+    <td>{{ i + 1 }}</td>
+    <td>
+      <a
+        title="Cliquez pour accéder au document en format HTML"
+        [routerLink]="['/notebook/'+ notebook.id +'/'+ doc.id]">
+        {{ doc.nom }}
+      </a>
+    </td>
+    <td>
+        {{ doc.category }}
+    </td>
+    <td>
+      <button
+        class="btn btn-outline-success btn-sm"
+        [routerLink]="['/notebook/'+ notebook.id +'/'+ doc.id+'/update']"
+      >
+        Modifier
+      </button>
+    </td>
+    <td>
+      <button class="btn btn-danger btn-sm" (click)="delete(notebook.id, doc.id)">
+        Supprimer
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>

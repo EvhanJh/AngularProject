@@ -1,0 +1,46 @@
+<app-title
+  titre="Gestion du carnet : {{notebook.nom}}"
+  vignette="Formulaire de modification d'un document"
+></app-title>
+
+<section class="row">
+  <section class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <div class="form-group mb-3">
+          <label>Nom</label>
+          <input type="text" class="form-control" [(ngModel)]="form.nom" />
+        </div>
+
+        <div class="form-group mb-3">
+          <label>Catégorie</label>
+          <input type="text" class="form-control" [(ngModel)]="form.category" />
+        </div>
+
+        <div class="form-group mb-3">
+          <label>Contenu</label>
+          <textarea
+            class="form-control"
+            [(ngModel)]="form.content"
+            (ngModelChange)="displayHtml()"
+          ></textarea>
+        </div>
+
+
+        <hr />
+
+        <a class="btn btn-secondary" [routerLink]="['/notebook/'+ notebook.id]">
+          Retour
+        </a>
+        <span class="float-end">
+          <button class="btn btn-outline-success" (click)="update()">Enregistrer les modifications</button>&nbsp;
+          <button class="btn btn-outline-secondary" (click)="reset()">Annuler</button>
+        </span>
+      </div>
+    </div>
+  </section>
+  <div class="col-md-6">
+    <p>Contenu affichage markDown : </p>
+    <div [innerHTML]="html"></div>
+  </div>
+</section>

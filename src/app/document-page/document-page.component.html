@@ -1,0 +1,20 @@
+<app-title
+  titre="Gestion du document : {{document.nom}}"
+  vignette="Catégorie : {{document.category}}"
+></app-title>
+
+<section class="row">
+  <div class="col">
+    <div class="row justify-content-between">
+      <div class="col">
+        <p>Contenu affichage markDown : </p>
+      </div>
+      <div class="col d-flex justify-content-end">
+        <a class="btn btn-outline-secondary" [routerLink]="['/notebook/'+ document.notebook_id]">
+          Retour
+        </a>
+      </div>
+    </div>
+    <div [innerHTML]="html"></div>
+  </div>
+</section>
